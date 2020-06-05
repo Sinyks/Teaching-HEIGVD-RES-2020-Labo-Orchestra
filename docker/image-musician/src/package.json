@@ -1,0 +1,10 @@
+{
+  "name": "musician_app",
+  "version": "1.0.0",
+  "description": "musician plays instrument",
+  "author": "Pablo Mercado",
+  "main": "musician.js",
+  "scripts": {
+    "start": "node musician.js"
+  }
+}

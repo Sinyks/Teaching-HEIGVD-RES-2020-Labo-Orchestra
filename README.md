@@ -106,9 +106,9 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How can we represent the system in an **architecture diagram**, which gives information both about the Docker containers, the communication protocols and the commands? |
 | | *Insert your diagram here...* |
 |Question | Who is going to **send UDP datagrams** and **when**? |
-| | *Enter your response here...* |
+| | The musician container once it runs at repeated intervals of 2 seconds. |
 |Question | Who is going to **listen for UDP datagrams** and what should happen when a datagram is received? |
-| | *Enter your response here...* |
+| | Auditor is going to listen. Auditor should process the datagram and tell what type of instrument the musician is playing. |
 |Question | What **payload** should we put in the UDP datagrams? |
 | | *Enter your response here...* |
 |Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures? |
@@ -120,9 +120,9 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**? |
-| | *Enter your response here...*  |
+|  | We use JSON.stringify global method to serialize our objects. |
 |Question | What is **npm**?  |
-| | *Enter your response here...*  |
+| | Node js installer? |
 |Question | What is the `npm install` command and what is the purpose of the `--save` flag?  |
 | | *Enter your response here...*  |
 |Question | How can we use the `https://www.npmjs.com/` web site?  |
@@ -130,7 +130,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122? |
 | | *Enter your response here...*  |
 |Question | In Node.js, how can we execute a function on a **periodic** basis? |
-| | *Enter your response here...*  |
+| | *Timeout thingy? |
 |Question | In Node.js, how can we **emit UDP datagrams**? |
 | | *Enter your response here...*  |
 |Question | In Node.js, how can we **access the command line arguments**? |
