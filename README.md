@@ -3,7 +3,7 @@
 ## Admin
 
 * **You can work in groups of 2 students**.
-* It is up to you if you want to fork this repo, or if you prefer to work in a private repo. However, you have to **use exactly the same directory structure for the validation procedure to work**. 
+* It is up to you if you want to fork this repo, or if you prefer to work in a private repo. However, you have to **use exactly the same directory structure for the validation procedure to work**.
 * We expect that you will have more issues and questions than with other labs (because we have a left some questions open on purpose). Please ask your questions on Telegram / Teams, so that everyone in the class can benefit from the discussion.
 
 ## Objectives
@@ -47,7 +47,7 @@ The following table gives you the mapping between instruments and sounds. Please
 * The auditor should include a TCP server and accept connection requests on port 2205.
 * After accepting a connection request, the auditor must send a JSON payload containing the list of <u>active</u> musicians, with the following format (it can be a single line, without indentation):
 
-```
+```json
 [
   {
   	"uuid" : "aa7d8cb3-a15f-4f06-a0eb-b8feb6244a60",
@@ -67,20 +67,20 @@ The following table gives you the mapping between instruments and sounds. Please
 
 You should be able to start an **Auditor** container with the following command:
 
-```
+```bash
 $ docker run -d -p 2205:2205 res/auditor
 ```
 
 You should be able to connect to your **Auditor** container over TCP and see that there is no active musician.
 
-```
+```bash
 $ telnet IP_ADDRESS_THAT_DEPENDS_ON_YOUR_SETUP 2205
 []
 ```
 
 You should then be able to start a first **Musician** container with the following command:
 
-```
+```bash
 $ docker run -d res/musician piano
 ```
 
@@ -90,7 +90,7 @@ You should then be able to kill the **Musician** container, wait 5 seconds and c
 
 You should then be able to start several **Musician** containers with the following commands:
 
-```
+```bash
 $ docker run -d res/musician piano
 $ docker run -d res/musician flute
 $ docker run -d res/musician flute
@@ -122,17 +122,17 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**? |
 |  | We use JSON.stringify global method to serialize our objects. |
 |Question | What is **npm**?  |
-| | Node js installer? |
+| | it's the Node js dependency manager (similar to Maven for java) |
 |Question | What is the `npm install` command and what is the purpose of the `--save` flag?  |
-| | *Enter your response here...*  |
+| | This command will install and add a package dependency to our package.json file, the purpose of the ``--save`` flag' is to explicitly tell npm to add entry to package.jon file, since npm this flag is no longer needed |
 |Question | How can we use the `https://www.npmjs.com/` web site?  |
-| | *Enter your response here...*  |
+| | We can use this website to search and install nodeJS package with ``npm``  |
 |Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122? |
-| | *Enter your response here...*  |
+| | We have installed the ``uuid`` package which allow us to generate RFC4122 compliant Unique ID  |
 |Question | In Node.js, how can we execute a function on a **periodic** basis? |
-| | *Timeout thingy? |
+| | By using the ``setInterval(func(),time)`` function which execute the function every **time** millisecondes |
 |Question | In Node.js, how can we **emit UDP datagrams**? |
-| | *Enter your response here...*  |
+| | With the ``dgram`` package (from node library), we can use the ``socket.send()`` method   |
 |Question | In Node.js, how can we **access the command line arguments**? |
 | | *Enter your response here...*  |
 
@@ -152,8 +152,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How do we **stop/kill** one running container?  |
 | | *Enter your response here...*  |
 |Question | How can we check that our running containers are effectively sending UDP datagrams?  |
-| | *Enter your response here...*  |
-
+| | *ssssEnter your response here...*  |
 
 ## Task 4: implement an "auditor" Node.js application
 
@@ -168,7 +167,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | When and how do we **get rid of inactive players**?  |
 | | *Enter your response here...* |
 |Question | How do I implement a **simple TCP server** in Node.js?  |
-| | *Enter your response here...* |
+| | By the usage of the ``process.argv`` we can access all argument from an array |
 
 
 ## Task 5: package the "auditor" app in a Docker image
