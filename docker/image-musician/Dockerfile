@@ -1,4 +1,4 @@
-FROM node:4.3.1
+FROM node:lts
 
 # docker build -t res/musician .
 # docker run -d res/musician piano

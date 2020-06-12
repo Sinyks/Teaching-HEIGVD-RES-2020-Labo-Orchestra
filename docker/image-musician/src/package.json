@@ -6,5 +6,8 @@
   "main": "musician.js",
   "scripts": {
     "start": "node musician.js"
+  },
+  "dependencies": {
+    "uuid": "^8.1.0"
   }
 }
