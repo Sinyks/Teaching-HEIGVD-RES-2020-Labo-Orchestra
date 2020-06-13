@@ -6,7 +6,7 @@ const { v4: uuidv4 } = require('uuid');
 
 const protocol = {
 	PROTOCOL_PORT: 1234,
-	PROTOCOL_MULTICAST_ADDRESS: '255.255.255.255'
+	PROTOCOL_MULTICAST_ADDRESS: '239.255.255.0'
 }
 
 const argInstrument = 2;
@@ -36,9 +36,10 @@ obj.uuid = uuidv4();
 
 const payload = JSON.stringify(obj);
 
-setInterval(function(){
+setInterval(() => {
 		// Send the payload via UDP (multicast)
-		message = new Buffer(payload);
+		let message = Buffer.from(payload);
+
 		s.send(message, 0, message.length, protocol.PROTOCOL_PORT, protocol.PROTOCOL_MULTICAST_ADDRESS,
 		function(err, bytes) {
 			console.log("Sending payload: " + payload + " via port " + s.address().port);
