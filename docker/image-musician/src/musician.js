@@ -24,7 +24,7 @@ let instruments = new Map();
 	instruments.set("drum", "boum-boum");
 
 // https://nodejs.org/en/knowledge/command-line/how-to-parse-command-line-arguments/
-const musician = process.arg[argInstrument];
+const musician = process.argv[argInstrument];
 // docker run res/musician piano
 
 // Create object and serialize it to JSON

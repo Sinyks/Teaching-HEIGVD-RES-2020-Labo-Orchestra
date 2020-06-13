@@ -4,6 +4,7 @@
   "description": "musician plays instrument",
   "author": "Pablo Mercado",
   "main": "musician.js",
+  "license": "ISC",
   "scripts": {
     "start": "node musician.js"
   },
