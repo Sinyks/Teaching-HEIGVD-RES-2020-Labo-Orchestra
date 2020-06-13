@@ -134,7 +134,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | In Node.js, how can we **emit UDP datagrams**? |
 | | With the ``dgram`` package (from node library), we can use the ``socket.send()`` method   |
 |Question | In Node.js, how can we **access the command line arguments**? |
-| | *Enter your response here...*  |
+| | By using the ``process.argv`` object which give us an array  |
 
 
 ## Task 3: package the "musician" app in a Docker image
@@ -167,7 +167,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | When and how do we **get rid of inactive players**?  |
 | | *Enter your response here...* |
 |Question | How do I implement a **simple TCP server** in Node.js?  |
-| | By the usage of the ``process.argv`` we can access all argument from an array |
+| | By the usage of the ``process.argv`` we can access all argument from an array with the CLI arguments |
 
 
 ## Task 5: package the "auditor" app in a Docker image
