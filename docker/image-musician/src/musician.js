@@ -1,6 +1,10 @@
 // We use a standard Node.js module to work with UDP
 const dgram = require('dgram');
 
+// We use the net module to create a tcp server
+
+const net = require('net');
+
 // We will use uuid package to generate a UUID
 const { v4: uuidv4 } = require('uuid');
 
@@ -12,7 +16,7 @@ const protocol = {
 const argInstrument = 2;
 
 // Let's create a datagram socket. We will use it to send our UDP datagrams
-const s = dgram.createSocket('udp4');
+const UDPServer = dgram.createSocket('udp4');
 
 const activeSince = Date.now();
 
@@ -40,8 +44,8 @@ setInterval(() => {
 		// Send the payload via UDP (multicast)
 		let message = Buffer.from(payload);
 
-		s.send(message, 0, message.length, protocol.PROTOCOL_PORT, protocol.PROTOCOL_MULTICAST_ADDRESS,
+		UDPServer.send(message, 0, message.length, protocol.PROTOCOL_PORT, protocol.PROTOCOL_MULTICAST_ADDRESS,
 		function(err, bytes) {
-			console.log("Sending payload: " + payload + " via port " + s.address().port);
+			console.log("Sending payload: " + payload + " via port " + UDPServer.address().port);
 		});
 	}, 2000);

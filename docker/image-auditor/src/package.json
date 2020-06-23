@@ -1,12 +1,13 @@
 {
   "name": "auditor",
   "version": "1.0.0",
-  "description": "",
+  "description": "little auditor",
   "main": "auditor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": "https://github.com/Sinyks/Teaching-HEIGVD-RES-2020-Labo-Orchestra.git"
 }

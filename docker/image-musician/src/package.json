@@ -10,5 +10,6 @@
   },
   "dependencies": {
     "uuid": "^8.1.0"
-  }
+  },
+  "repository": "https://github.com/Sinyks/Teaching-HEIGVD-RES-2020-Labo-Orchestra.git"
 }

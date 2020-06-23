@@ -1,7 +1,7 @@
 FROM node:lts
 
 # docker build -t res/auditor .
-# docker run -d res/auditor piano
+# docker run -p 2205:2205 -d res/auditor
 
 COPY src /opt/app/
 
