@@ -104,15 +104,15 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | --- | --- |
 |Question | How can we represent the system in an **architecture diagram**, which gives information both about the Docker containers, the communication protocols and the commands? |
-| | *Insert your diagram here...* |
+| | ![](./images/diagramme.png) |
 |Question | Who is going to **send UDP datagrams** and **when**? |
 | | The musician container once it runs at repeated intervals of 2 seconds. |
 |Question | Who is going to **listen for UDP datagrams** and what should happen when a datagram is received? |
 | | Auditor is going to listen. Auditor should process the datagram and tell what type of instrument the musician is playing. |
 |Question | What **payload** should we put in the UDP datagrams? |
-| | *Enter your response here...* |
+| | We put in the payload the JSON structure with all the data needed for the  |
 |Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures? |
-| | *Enter your response here...* |
+| | We will use a **Map** data structure, the sender will use it for sending the correct sound and receiver to update his database with uuid|
 
 
 ## Task 2: implement a "musician" Node.js application
