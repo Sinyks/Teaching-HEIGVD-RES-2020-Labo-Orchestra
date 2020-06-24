@@ -9,6 +9,8 @@ const protocol = {
 	PROTOCOL_MULTICAST_ADDRESS: '239.255.255.0'
 }
 
+const maxInactivityTime = 5;
+
 const UDPClient = dgram.createSocket('udp4');
 
 // and create a tcp server to transmit debug message
@@ -41,13 +43,28 @@ TCPServer.listen(2205);
 UDPClient.on('message', (msg, rinfo) => {
     console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
 
-    let uuid = JSON.parse(msg).uuid;
+		let musician = JSON.parse(msg);
 
-    if(!musicians.has(uuid)){
-        musicians.set(uuid,JSON.parse(msg));
-    }
+		musician.lastActivityTime = moment.now();
+		musician.active = true;
+
+    musicians.set(musician.uuid,musician);
 
 });
+
+setInterval(() => {
+	musicians.forEach((musician) => {
+		const inactivityTime = moment().diff(musician.lastActivityTime, 'seconds');
+		// console.log(inactivityTime);
+		if (inactivityTime > maxInactivityTime){
+			musician.active = false;
+
+		}
+		console.log(musician);
+
+	});
+
+}, 2000);
 
 UDPClient.bind(protocol.PROTOCOL_PORT, () => {
   console.log('listen on port: %j',UDPClient.address());
