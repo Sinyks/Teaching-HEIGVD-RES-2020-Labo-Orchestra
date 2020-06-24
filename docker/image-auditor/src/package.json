@@ -9,5 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "repository": "https://github.com/Sinyks/Teaching-HEIGVD-RES-2020-Labo-Orchestra.git"
+  "repository": "https://github.com/Sinyks/Teaching-HEIGVD-RES-2020-Labo-Orchestra.git",
+  "dependencies": {
+    "moment": "^2.27.0"
+  }
 }

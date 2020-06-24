@@ -1,6 +1,9 @@
 const dgram = require('dgram');
 const net = require('net');
 
+// Moment js we help us to manage date and time
+const moment = require('moment');
+
 const protocol = {
 	PROTOCOL_PORT: 1234,
 	PROTOCOL_MULTICAST_ADDRESS: '239.255.255.0'
@@ -10,19 +13,11 @@ const UDPClient = dgram.createSocket('udp4');
 
 // and create a tcp server to transmit debug message
 const TCPServer = net.createServer();
-
 let musicians = new Map();
 
-UDPClient.on('message', (msg, rinfo) => {
-    console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
-
-    let uuid = JSON.parse(msg).uuid;
-
-    if(!musicians.has(uuid)){
-        musicians.set(uuid,JSON.parse(msg));
-    }
-
-});
+/*
+	TCP SERVER
+*/
 
 TCPServer.on('listening', () => {
   console.log("The socket is bound and the server is listening for connection requests.");
@@ -39,6 +34,20 @@ TCPServer.on('connection', (socket) => {
 // we tell our tcp connection to listen on tcp port 2205
 TCPServer.listen(2205);
 
+/*
+	UDP SERVER
+*/
+
+UDPClient.on('message', (msg, rinfo) => {
+    console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
+
+    let uuid = JSON.parse(msg).uuid;
+
+    if(!musicians.has(uuid)){
+        musicians.set(uuid,JSON.parse(msg));
+    }
+
+});
 
 UDPClient.bind(protocol.PROTOCOL_PORT, () => {
   console.log('listen on port: %j',UDPClient.address());

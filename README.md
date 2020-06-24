@@ -112,7 +112,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | What **payload** should we put in the UDP datagrams? |
 | | We put in the payload the JSON structure with all the data needed for the  |
 |Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures? |
-| | We will use a **Map** data structure, the sender will use it for sending the correct sound and receiver to update his database with uuid|
+| | We will use a **Map** data structure, the sender will use it for sending the correct sound and receiver to update his database with the **uuid**|
 
 
 ## Task 2: implement a "musician" Node.js application
@@ -159,15 +159,15 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | ---  |
 |Question | With Node.js, how can we listen for UDP datagrams in a multicast group? |
-| | *Enter your response here...*  |
+| | We need to create an UDP socket in listening and add our node to the correct IPv4 multicast group with the ``socket.addMembership()`` method  |
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**?  |
-| | *Enter your response here...* |
+| | We can construct a **Map** with ``let myMap = new Map()`` and use ``map.set(k,v)`` method to add entrie to our dictionary  |
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?  |
 | | *Enter your response here...* |
 |Question | When and how do we **get rid of inactive players**?  |
 | | *Enter your response here...* |
 |Question | How do I implement a **simple TCP server** in Node.js?  |
-| | By the usage of the ``process.argv`` we can access all argument from an array with the CLI arguments |
+| | By the usage of the ``net`` module in nodeJS we can create a TCPSocket |
 
 
 ## Task 5: package the "auditor" app in a Docker image
