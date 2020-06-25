@@ -53,17 +53,16 @@ UDPClient.on('message', (msg, rinfo) => {
 });
 
 setInterval(() => {
+	toRemove = new Set();
 	musicians.forEach((musician) => {
 		const inactivityTime = moment().diff(musician.lastActivityTime, 'seconds');
-		// console.log(inactivityTime);
-		if (inactivityTime > maxInactivityTime){
-			musician.active = false;
-
-		}
+		musician.active = inactivityTime > maxInactivityTime;
 		console.log(musician);
-
+		console.log(`inactivity time: ${inactivityTime}, >5?: ${musician.active}`);
+		if(musician.active){ toRemove.add(musician); }
 	});
 
+	toRemove.forEach((musician) => { musicians.delete(musician.uuid); });
 }, 2000);
 
 UDPClient.bind(protocol.PROTOCOL_PORT, () => {
