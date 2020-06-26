@@ -110,7 +110,15 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | Who is going to **listen for UDP datagrams** and what should happen when a datagram is received? |
 | | Auditor is going to listen. Auditor should process the datagram and tell what type of instrument the musician is playing. |
 |Question | What **payload** should we put in the UDP datagrams? |
-| | We put in the payload the JSON structure with all the data needed for the  |
+| | We put in the payload the JSON structure with all the data needed for the auditor eg.
+```json
+{
+  "instrument":"piano",
+  "sound":"ti-ta-ti",
+  "activeSince":1593176792034,
+  "uuid":"89834efd-5b87-415d-a701-87022bf54006"
+}
+``` |
 |Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures? |
 | | We will use a **Map** data structure, the sender will use it for sending the correct sound and receiver to update his database with the **uuid**|
 
