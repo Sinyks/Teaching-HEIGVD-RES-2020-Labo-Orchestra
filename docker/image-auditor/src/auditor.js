@@ -57,8 +57,10 @@ setInterval(() => {
 	musicians.forEach((musician) => {
 		const inactivityTime = moment().diff(musician.lastActivityTime, 'seconds');
 		musician.active = inactivityTime > maxInactivityTime;
+
 		console.log(musician);
 		console.log(`inactivity time: ${inactivityTime}, >5?: ${musician.active}`);
+
 		if(musician.active){ toRemove.add(musician); }
 	});
 

@@ -163,11 +163,11 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**?  |
 | | We can construct a **Map** with ``let myMap = new Map()`` and use ``map.set(k,v)`` method to add entrie to our dictionary  |
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?  |
-| | *Enter your response here...* |
+| | With the different method of the library, ``moment.now()``  to get the current timestamp and and ``moment.diff(date, 'seconds')``, to get the difference between 2  dates (source : https://momentjs.com/docs/#/displaying/difference/) |
 |Question | When and how do we **get rid of inactive players**?  |
-| | *Enter your response here...* |
+| | We have a boolean ``musician.active`` and we iterate periodically to delete inactive musician |
 |Question | How do I implement a **simple TCP server** in Node.js?  |
-| | By the usage of the ``net`` module in nodeJS we can create a TCPSocket |
+| | By the usage of the ``net`` module in nodeJS we can create a TCPSocket with ``const server = net.createServer((socket)`` source: https://nodejs.org/api/net.html |
 
 
 ## Task 5: package the "auditor" app in a Docker image
