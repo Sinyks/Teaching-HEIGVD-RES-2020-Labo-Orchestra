@@ -163,7 +163,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**?  |
 | | We can construct a **Map** with ``let myMap = new Map()`` and use ``map.set(k,v)`` method to add entrie to our dictionary  |
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?  |
-| | With the different method of the library, ``moment.now()``  to get the current timestamp and and ``moment.diff(date, 'seconds')``, to get the difference between 2  dates (source : https://momentjs.com/docs/#/displaying/difference/) |
+| | With the different method of the library,  ``moment.now()``  to get the current timestamp and and ``moment.diff(date, 'seconds')``, to get the difference between 2  dates (source : https://momentjs.com/docs/#/displaying/difference/) |
 |Question | When and how do we **get rid of inactive players**?  |
 | | We have a boolean ``musician.active`` and we iterate periodically to delete inactive musician |
 |Question | How do I implement a **simple TCP server** in Node.js?  |
@@ -175,7 +175,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | How do we validate that the whole system works, once we have built our Docker image? |
-| | *Enter your response here...* |
+| | We execute the ``validate.sh`` script which will run/kill the musician and check if the auditors update their list correctly |
 
 
 ## Constraints

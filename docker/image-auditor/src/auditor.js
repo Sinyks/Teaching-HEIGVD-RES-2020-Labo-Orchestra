@@ -31,6 +31,9 @@ TCPServer.on('connection', (socket) => {
 
   socket.write(JSON.stringify(myArray, null,4));
 
+	// the server terminate his connection
+	socket.end();
+
 });
 
 // we tell our tcp connection to listen on tcp port 2205
@@ -56,12 +59,15 @@ setInterval(() => {
 	toRemove = new Set();
 	musicians.forEach((musician) => {
 		const inactivityTime = moment().diff(musician.lastActivityTime, 'seconds');
-		musician.active = inactivityTime <= maxInactivityTime;
+		musician.active = (inactivityTime <= maxInactivityTime);
 
-		console.log(musician);
-		console.log(`inactivity time: ${inactivityTime}, >5?: ${musician.active}`);
+		// console.log(musician);
+		// console.log(`inactivity time: ${inactivityTime}, >5?: ${musician.active}`);
 
-		if(!musician.active){ toRemove.add(musician); }
+		if(!musician.active){
+			toRemove.add(musician);
+		}
+
 	});
 
 	toRemove.forEach((musician) => { musicians.delete(musician.uuid); });
